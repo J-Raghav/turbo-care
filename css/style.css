@@ -44,16 +44,9 @@ small{
 #close{
   display: none;
 }
-#sidebar.active #close{
-  display: none;
-}
-#sidebar.active #open{
-  display: block;
-}
 
 #sidebar ul li a{
   display: block;
-  text-align: left;
   white-space: nowrap;
   color:gray;
   font-size: 1.5rem;
@@ -72,7 +65,7 @@ small{
   font-size: 2rem;
 }
 #sidebar.active ul li a span{
-  display: none
+  display: none;
 }
 
 /* Margins */

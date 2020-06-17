@@ -9,7 +9,8 @@ $(function(){
   });
 
   $("#sidebarCollapse").resize(function(){
-    $("#sidebarCollapse> i").css("line-height",`${$("img[alt='branding']").height()}px`)
+    $("#sidebarCollapse> i").css("height",`${$("img[alt='branding']").height()}px`);
+    $("#sidebarCollapse> i").css("line-height",`${$("img[alt='branding']").height()}px`);
   }).trigger('resize');
 
   $("#sidebarCollapse").on("click",function(){
