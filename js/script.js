@@ -75,6 +75,7 @@ $(function(){
 
     $("#userList> tbody").prepend($row);
 
+
     this.reset();
     $("section :nth-child(1)")[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
     $("#msg").show();
@@ -82,6 +83,4 @@ $(function(){
       $("#msg").hide();
     },1500);
   });
-
-
 });
