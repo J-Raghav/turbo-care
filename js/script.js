@@ -78,9 +78,9 @@ $(function(){
 
     this.reset();
     $("section :nth-child(1)")[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
-    $("#msg").show();
+    $("#msg").css("top","25%");
     setTimeout(function(){
-      $("#msg").hide();
+      $("#msg").css("top","-100px");
     },1500);
   });
 });

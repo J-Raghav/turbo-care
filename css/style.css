@@ -84,7 +84,11 @@ hr{
 }
 
 #msg{
-  display: none;
+  width:60%;
+  position: absolute;
+  top:-100px;
+  left:20%;
+  transition: all 1.5s ease-in;
 }
 
 /* for changing width of columns */
