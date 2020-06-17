@@ -1,0 +1,165 @@
+/* Responsive font-size */
+html {
+  font-size: calc(12px + (22 - 12) * ((100vw - 300px) / (2100 - 300)));
+}
+h1{
+  font-size: 2rem;
+}
+
+small{
+  color:gray;
+}
+
+/* SideBar */
+#sidebarCollapse{
+  display: block;
+  border:none;
+  width: 80px;
+  background-color: purple;
+  position: relative;
+  left: 15px;
+}
+#sidebarCollapse> i{
+  color:white;
+  font-size: 2rem;
+}
+/* Shrinking the sidebar from 250px to 80px and center aligining its content*/
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+  padding-left: 10px;
+  background-color: #f8f9fa;
+  transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+  transform-origin: center left;
+}
+#sidebar.active {
+  padding: 0;
+  min-width: 80px;
+  max-width: 80px;
+  text-align: center;
+}
+/* Toggling the sidebar header content, hide the big heading [h3] and showing the small heading [strong] and vice versa*/
+
+#close{
+  display: none;
+}
+#sidebar.active #close{
+  display: none;
+}
+#sidebar.active #open{
+  display: block;
+}
+
+#sidebar ul li a{
+  display: block;
+  text-align: left;
+  color:gray;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin:1rem auto;
+  margin-right: auto;
+}
+
+#sidebar.active ul li a{
+  padding: 10px;
+  text-align: center;
+}
+#sidebar.active ul li a i {
+  margin-right:  0;
+  display: block;
+  font-size: 2rem;
+}
+#sidebar.active ul li a span{
+  display: none;
+}
+
+/* Margins */
+input,
+select,
+section > *{
+  margin-bottom: 1rem;
+}
+hr{
+  margin:1rem auto;
+}
+
+#searchBox{
+  width:100%;
+  max-width:255px;
+}
+
+/* for changing width of columns */
+table{
+  table-layout:fixed;
+  min-width: 255px;
+}
+#tableBox th:nth-child(3){
+  width:25%;
+}
+
+/* for scrollable table */
+#tableBox th{
+  background-color:#f8f9fa;
+  position:sticky;
+  top: 0px;
+}
+#tableBox{
+  overflow-y:auto;
+}
+
+input[type='submit'],
+input[type='reset']{
+  margin-right:1.2rem;
+  width:45%;
+  max-width:200px;
+}
+
+
+.special-btn{
+  color:white;
+  background-color: purple;
+  border:none;
+}
+.special-btn:hover{
+  filter:brightness(75%);
+  color:white;
+}
+
+
+input[type=file] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.mybtn,
+input[type=file] + label {
+    border:none;
+    display: inline-block;
+    background-color: rgb(220,220,220);
+    color:gray;
+}
+.mybtn:hover,
+input[type=file]:focus + label,
+input[type=file] + label:hover{
+  filter:brightness(75%);
+}
+
+@media (max-width: 560px) {
+  #sidebar{
+    margin-left: -250px;
+  }
+  #sidebar.active{
+    max-width: 40px;
+    min-width: 40px;
+    margin-left: 0;
+  }
+  #sidebarCollapse{
+    width: 40px;
+    background-color: none;
+  }
+}
