@@ -1,6 +1,8 @@
 $(function(){
+
+  // Swithes active state to minified version of sidebar for width less than 563
   $(window).resize(function(){
-    if ($(window).width() <= 562){
+    if ($(window).width() < 563){
       $("#sidebar").removeClass("active");
     }
     else {
@@ -8,17 +10,20 @@ $(function(){
     }
   });
 
+  // for vertically centering hambrger icon
   $("#sidebarCollapse").resize(function(){
     $("#sidebarCollapse> i").css("height",`${$("img[alt='branding']").height()}px`);
     $("#sidebarCollapse> i").css("line-height",`${$("img[alt='branding']").height()}px`);
   }).trigger('resize');
 
+  // toggling sidebar
   $("#sidebarCollapse").on("click",function(){
     $("#sidebar").toggleClass("active");
     $("#close").toggle();
     $("#open").toggle();
   });
 
+  // loads preview image and calls validation function on file
   $("#image").change(function(){
     if (this.files && this.files[0]){
         if (!validateImageFile(this.files[0])){
@@ -38,11 +43,17 @@ $(function(){
     }
   });
 
+  // Image validation function
+  function validateImageFile(file){
+    const fsize = Math.round(file.size/1024);
+    const fname = file.name;
 
+    return fsize < 1024 && /.*\.jpg|png$/.test(fname)
+  }
+
+  // triggered on form submission and adds user data to table
   $("#addUserForm").submit(function(e){
-
     e.preventDefault();
-
     const formData = new FormData(this);
 
     if ($(".temp")[0])
@@ -65,13 +76,12 @@ $(function(){
     $("#userList> tbody").prepend($row);
 
     this.reset();
+    $("section :nth-child(1)")[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    $("#msg").show();
+    setTimeout(function(){
+      $("#msg").hide();
+    },1500);
   });
 
-  function validateImageFile(file){
-    const fsize = Math.round(file.size/1024);
-    const fname = file.name;
-
-    return fsize < 1024 && /.*\.jpg|png$/.test(fname)
-  }
 
 });
