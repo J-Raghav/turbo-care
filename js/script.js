@@ -81,6 +81,6 @@ $(function(){
     $("#msg").css("top","25%");
     setTimeout(function(){
       $("#msg").css("top","-100px");
-    },1500);
+    },2500);
   });
 });

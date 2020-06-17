@@ -88,6 +88,7 @@ hr{
   position: absolute;
   top:-100px;
   left:20%;
+  z-index: 99;
   transition: all 1.5s ease-in;
 }
 
@@ -156,6 +157,9 @@ input[type=file] + label:hover{
 @media (max-width: 560px) {
   #sidebar{
     margin-left: -250px;
+  }
+  #sidebar ul li a span{
+    display: none;
   }
   #sidebar.active{
     max-width: 40px;
